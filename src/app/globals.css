@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000 !important;
+  color: #fff !important;
+  overflow-x: hidden;
+}
+
+/* Marquee */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+
+/* Tech scroll */
+@keyframes techScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tech-scroll {
+  animation: techScroll 15s linear infinite;
+}
+
+.tech-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Chat slide */
+@keyframes chatSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chatbot glow */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(2, 175, 188, 0.5), 0 0 20px rgba(2, 175, 188, 0.3), 0 0 30px rgba(2, 175, 188, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(2, 175, 188, 0.7), 0 0 30px rgba(2, 175, 188, 0.5), 0 0 45px rgba(2, 175, 188, 0.3); }
+}
+
+.chat-glow {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.chat-msg {
+  animation: chatSlideUp 0.3s ease-out;
+}
+
+/* Ensure all text is visible */
+* {
+  color: inherit;
+}
